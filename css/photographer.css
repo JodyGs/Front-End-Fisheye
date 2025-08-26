@@ -70,11 +70,8 @@
     cursor: pointer;
 }
 
-.contact_button:hover,
-.contact_button:focus {
+.contact_button:hover {
     background-color: #7a1818;
-    outline: 3px solid #901C1C;
-    outline-offset: 3px;
 }
 
 .modal {
@@ -102,10 +99,8 @@
     border-radius: 5px;
 }
 
-.modal header button:hover,
-.modal header button:focus {
+.modal header button:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    outline: 2px solid #901C1C;
 }
 
 .modal header img {
@@ -148,12 +143,106 @@ form input {
     box-sizing: border-box;
 }
 
-form input:focus {
-    outline: 2px solid #901C1C;
-    outline-offset: 2px;
+
+
+.sorting-section {
+    display: flex;
+    align-items: center;
+    margin: 30px 100px;
+    font-weight: bold;
 }
 
-[tabindex="0"]:focus {
-    outline: 2px solid #901C1C;
-    outline-offset: 3px;
+.sorting-section label {
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
+.sorting-section select {
+    background-color: #901C1C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+
+.media-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    margin: 50px 100px;
+    padding-bottom: 50px;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.media-link {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 300px;
+}
+
+.media-image,
+.media-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.media-image:hover,
+.media-video:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.media-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.media-title {
+    color: #901C1C;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0;
+    flex: 1;
+}
+
+.media-likes {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #901C1C;
+    font-weight: bold;
+}
+
+.media-likes span {
+    margin-right: 10px;
+}
+
+.heart-icon {
+    background: none;
+    border: none;
+    color: #901C1C;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.heart-icon:hover {
+    background-color: rgba(144, 28, 28, 0.1);
 }
