@@ -1,11 +1,60 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(196, 196, 196, 0.4);
+    z-index: 1000;
+}
+
+#contact_modal[aria-hidden="false"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .photograph-header {
+    display: flex;
+    justify-content: space-between;
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.photographer-details {
+    flex: 1;
+}
+
+.photographer-details .photographer-name {
+    color: #d3573c;
+    font-size: 4rem;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+}
+
+.photographer-details .photographer-location {
+    color: #901c1c;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.photographer-details .photographer-tagline {
+    color: #757575;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.photograph-header .photographer-portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .contact_button {
@@ -19,6 +68,13 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.contact_button:hover,
+.contact_button:focus {
+    background-color: #7a1818;
+    outline: 3px solid #901C1C;
+    outline-offset: 3px;
 }
 
 .modal {
@@ -36,6 +92,20 @@
 .modal header {
     justify-content: space-between;
     width: 100%;
+}
+
+.modal header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.modal header button:hover,
+.modal header button:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: 2px solid #901C1C;
 }
 
 .modal header img {
@@ -73,4 +143,17 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    padding: 0 15px;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+form input:focus {
+    outline: 2px solid #901C1C;
+    outline-offset: 2px;
+}
+
+[tabindex="0"]:focus {
+    outline: 2px solid #901C1C;
+    outline-offset: 3px;
 }

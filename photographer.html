@@ -13,21 +13,23 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" onclick="displayModal()" tabindex="0" aria-label="Contactez-moi">Contactez-moi</button>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" aria-modal="true">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2 id="modal-title">Contactez-moi</h2>
+          <button type="button" onclick="closeModal()" tabindex="0" aria-label="Fermer la boîte de dialogue">
+            <img src="assets/icons/close.svg" alt="Fermer" />
+          </button>
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="first-name">Prénom</label>
+						<input id="first-name" type="text" tabindex="0" aria-label="Saisissez votre prénom" />
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" type="submit" tabindex="0" aria-label="Envoyer le message de contact">Envoyer</button>
 				</form>
 			</div>
 		</div>
