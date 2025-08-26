@@ -31,20 +31,51 @@ h1 {
     margin-top: 100px;
 }
 
-.photographer_section article {
+.photographer-card {
     justify-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    margin: 20px;
 }
 
-.photographer_section article h2 {
-    color: #D3573C;
-    font-size: 36px;
+.photographer-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.photographer_section article img {
-    height: 200px;
+.photographer-portrait {
     width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.photographer-name {
+    color: #d3573c;
+    font-size: 2rem;
+    margin: 10px 0 5px 0;
+    font-weight: normal;
+}
+
+.photographer-location {
+    font-size: 1rem;
+    color: #901c1c;
+    margin: 0 0 5px 0;
+}
+
+.photographer-tagline {
+    font-size: 0.9rem;
+    color: #000000;
+    margin: 0 0 5px 0;
+}
+
+.photographer-price {
+    font-size: 0.9rem;
+    color: #757575;
+    margin: 0;
 }
