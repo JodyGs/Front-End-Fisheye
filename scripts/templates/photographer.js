@@ -13,7 +13,7 @@ function photographerTemplate(data) {
         
         const img = document.createElement('img');
         img.setAttribute('src', picture);
-        img.setAttribute('alt', name);
+        img.setAttribute('alt', `Portrait de ${name}, photographe`);
         img.className = 'photographer-portrait';
         
         const h2 = document.createElement('h2');
@@ -31,6 +31,8 @@ function photographerTemplate(data) {
         const pricing = document.createElement('p');
         pricing.textContent = `${price}€/jour`;
         pricing.className = 'photographer-price';
+        
+        link.setAttribute('aria-label', `Voir le profil de ${name}, photographe à ${city}`);
         
         link.appendChild(img);
         link.appendChild(h2);
