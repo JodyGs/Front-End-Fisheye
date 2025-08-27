@@ -21,17 +21,33 @@
     <div id="contact_modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true" aria-modal="true">
 			<div class="modal">
 				<header>
-          <h2 id="modal-title">Contactez-moi</h2>
+          <h2 id="modal-title">Contactez-moi<br><span id="photographer-name-modal"></span></h2>
           <button type="button" onclick="closeModal()" tabindex="0" aria-label="Fermer la boîte de dialogue">
             <img src="assets/icons/close.svg" alt="Fermer" />
           </button>
         </header>
-				<form>
-					<div>
+				<form id="contact-form" aria-labelledby="modal-title">
+					<div class="form-group">
 						<label for="first-name">Prénom</label>
-						<input id="first-name" type="text" tabindex="0" aria-label="Saisissez votre prénom" />
+						<input id="first-name" name="firstName" type="text" aria-describedby="first-name-help" aria-required="true" required />
+						<span id="first-name-help" class="sr-only">Champ obligatoire pour votre prénom</span>
 					</div>
-          <button class="contact_button" type="submit" tabindex="0" aria-label="Envoyer le message de contact">Envoyer</button>
+					<div class="form-group">
+						<label for="last-name">Nom</label>
+						<input id="last-name" name="lastName" type="text" aria-describedby="last-name-help" aria-required="true" required />
+						<span id="last-name-help" class="sr-only">Champ obligatoire pour votre nom de famille</span>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" aria-describedby="email-help" aria-required="true" required />
+						<span id="email-help" class="sr-only">Champ obligatoire pour votre adresse email</span>
+					</div>
+					<div class="form-group">
+						<label for="message">Votre message</label>
+						<textarea id="message" name="message" aria-describedby="message-help" aria-required="true" required></textarea>
+						<span id="message-help" class="sr-only">Champ obligatoire pour votre message au photographe</span>
+					</div>
+          <button class="contact_button" type="submit" aria-label="Envoyer votre message de contact au photographe">Envoyer</button>
 				</form>
 			</div>
 		</div>

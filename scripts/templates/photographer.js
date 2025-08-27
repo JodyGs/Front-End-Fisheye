@@ -85,5 +85,25 @@ function photographerTemplate(data) {
         return { photographerInfo, photographerImage };
     }
     
-    return { name, picture, getUserCardDOM, getPhotographerHeaderDOM }
+    function getPhotographerStatsDOM(totalLikes) {
+        const statsContainer = document.createElement('div');
+        statsContainer.className = 'photographer-stats';
+        
+        const likesElement = document.createElement('span');
+        likesElement.textContent = `${totalLikes.toLocaleString()} ♥`;
+        likesElement.className = 'total-likes';
+        likesElement.setAttribute('aria-label', `${totalLikes} likes au total`);
+        
+        const priceElement = document.createElement('span');
+        priceElement.textContent = `${price}€ / jour`;
+        priceElement.className = 'daily-price';
+        priceElement.setAttribute('aria-label', `${price} euros par jour`);
+        
+        statsContainer.appendChild(likesElement);
+        statsContainer.appendChild(priceElement);
+        
+        return statsContainer;
+    }
+
+    return { name, picture, getUserCardDOM, getPhotographerHeaderDOM, getPhotographerStatsDOM }
 }

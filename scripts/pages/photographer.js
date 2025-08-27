@@ -22,6 +22,11 @@ async function displayPhotographerInfo() {
         photographHeader.insertBefore(headerElements.photographerInfo, photographHeader.firstChild);
         photographHeader.appendChild(headerElements.photographerImage);
         
+        const modalPhotographerName = document.getElementById('photographer-name-modal');
+        if (modalPhotographerName) {
+            modalPhotographerName.textContent = photographer.name;
+        }
+        
         displayPhotographerMedia(data.media, photographer);
     }
 }
@@ -103,6 +108,22 @@ function renderMedia(mediaList, photographer, container) {
             console.error('Erreur lors de la création du média:', error);
         }
     });
+    
+    updatePhotographerStats(mediaList, photographer);
+}
+
+function updatePhotographerStats(mediaList, photographer) {
+    const totalLikes = mediaList.reduce((sum, media) => sum + media.likes, 0);
+    
+    let statsContainer = document.querySelector('.photographer-stats');
+    if (statsContainer) {
+        statsContainer.remove();
+    }
+    
+    const photographerTemplateInstance = photographerTemplate(photographer);
+    const statsElement = photographerTemplateInstance.getPhotographerStatsDOM(totalLikes);
+    
+    document.body.appendChild(statsElement);
 }
 
 document.addEventListener('DOMContentLoaded', displayPhotographerInfo);

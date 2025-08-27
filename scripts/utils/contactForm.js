@@ -9,6 +9,9 @@ function displayModal() {
     }
     
     document.addEventListener('keydown', handleModalKeydown);
+    
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', handleFormSubmit);
 }
 
 function closeModal() {
@@ -17,6 +20,9 @@ function closeModal() {
     modal.setAttribute('aria-hidden', 'true');
     
     document.removeEventListener('keydown', handleModalKeydown);
+    
+    const form = document.getElementById('contact-form');
+    form.removeEventListener('submit', handleFormSubmit);
     
     const contactButton = document.querySelector('.contact_button');
     if (contactButton) {
@@ -31,7 +37,7 @@ function handleModalKeydown(event) {
     
     if (event.key === 'Tab') {
         const modal = document.getElementById("contact_modal");
-        const focusableElements = modal.querySelectorAll('input, button, [tabindex]:not([tabindex="-1"])');
+        const focusableElements = modal.querySelectorAll('input, textarea, button, [tabindex]:not([tabindex="-1"])');
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
         
@@ -43,4 +49,22 @@ function handleModalKeydown(event) {
             firstElement.focus();
         }
     }
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const contactData = {
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        email: formData.get('email'),
+        message: formData.get('message')
+    };
+    
+    console.log('Données du formulaire de contact:', contactData);
+    
+    closeModal();
+    
+    event.target.reset();
 }
