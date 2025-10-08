@@ -126,4 +126,23 @@ function updatePhotographerStats(mediaList, photographer) {
     document.body.appendChild(statsElement);
 }
 
+function updateStatsDisplay() {
+    const mediaCards = document.querySelectorAll('.media-card');
+    let totalLikes = 0;
+    
+    mediaCards.forEach(card => {
+        const likesSpan = card.querySelector('.media-likes span');
+        if (likesSpan) {
+            totalLikes += parseInt(likesSpan.textContent) || 0;
+        }
+    });
+    
+    const totalLikesElement = document.querySelector('.total-likes');
+    if (totalLikesElement) {
+        totalLikesElement.textContent = `${totalLikes.toLocaleString()} ♥`;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', displayPhotographerInfo);
+
+document.addEventListener('likesUpdated', updateStatsDisplay);

@@ -246,3 +246,8 @@ form input {
 .heart-icon:hover {
     background-color: rgba(144, 28, 28, 0.1);
 }
+
+.heart-icon.liked {
+    color: #901C1C;
+    background-color: rgba(144, 28, 28, 0.2);
+}

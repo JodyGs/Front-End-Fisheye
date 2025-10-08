@@ -1,5 +1,6 @@
 function mediaTemplate(data, photographerId) {
     const { id, title, likes, date, price, image, video } = data;
+    let isLiked = false;
 
     function createMediaElement() {
         if (image) {
@@ -52,6 +53,23 @@ function mediaTemplate(data, photographerId) {
         heartIcon.className = 'heart-icon';
         heartIcon.setAttribute('aria-label', `Aimer ${title}`);
         heartIcon.setAttribute('tabindex', '0');
+        
+        heartIcon.addEventListener('click', () => {
+            if (!isLiked) {
+                data.likes++;
+                isLiked = true;
+                heartIcon.classList.add('liked');
+            } else {
+                data.likes--;
+                isLiked = false;
+                heartIcon.classList.remove('liked');
+            }
+            
+            likesCount.textContent = data.likes;
+            
+            const event = new CustomEvent('likesUpdated');
+            document.dispatchEvent(event);
+        });
         
         likesContainer.appendChild(likesCount);
         likesContainer.appendChild(heartIcon);
