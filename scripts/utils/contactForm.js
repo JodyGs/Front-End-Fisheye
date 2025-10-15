@@ -1,6 +1,6 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "block";
+    modal.classList.add("show");
     modal.setAttribute('aria-hidden', 'false');
     
     const firstInput = modal.querySelector('#first-name');
@@ -16,7 +16,7 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    modal.classList.remove("show");
     modal.setAttribute('aria-hidden', 'true');
     
     document.removeEventListener('keydown', handleModalKeydown);
