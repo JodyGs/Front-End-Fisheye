@@ -163,6 +163,9 @@ class Lightbox {
             imageEl.src = currentMedia.src;
             imageEl.alt = currentMedia.title || 'Image';
         }
+        
+        // Align title with media after a short delay to ensure media is loaded
+        setTimeout(() => this.alignTitleWithMedia(), 100);
     }
 
     prev() {
@@ -256,6 +259,20 @@ class Lightbox {
                 this.focusableElements[0].focus();
             }
         }
+    }
+
+    alignTitleWithMedia() {
+        const infoEl = this.lightboxElement.querySelector('.lightbox-info');
+        const mediaContainer = this.lightboxElement.querySelector('.lightbox-media-container');
+        const activeMedia = this.lightboxElement.querySelector('.lightbox-image[style*="block"], .lightbox-video[style*="block"]');
+        
+        if (!activeMedia || !infoEl) return;
+        
+        const containerRect = mediaContainer.getBoundingClientRect();
+        const mediaRect = activeMedia.getBoundingClientRect();
+        const leftOffset = mediaRect.left - containerRect.left;
+        
+        infoEl.style.left = `${leftOffset}px`;
     }
 }
 
@@ -351,6 +368,7 @@ const lightboxCSS = `
     height: 100%;
     padding: 100px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .lightbox-image,
