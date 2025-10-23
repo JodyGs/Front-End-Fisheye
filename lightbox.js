@@ -21,13 +21,19 @@ class Lightbox {
                 <div class="lightbox-overlay" aria-label="Fermer la lightbox"></div>
                 <div class="lightbox-content">
                     <button class="lightbox-close" aria-label="Fermer la lightbox" type="button">
-                        <span aria-hidden="true">&times;</span>
+                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#911C1C"/>
+                        </svg>
                     </button>
                     <button class="lightbox-prev" aria-label="M\u00e9dia pr\u00e9c\u00e9dent" type="button">
-                        <span aria-hidden="true">&#8249;</span>
+                        <svg width="30" height="48" viewBox="0 0 30 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.6399 42.36L11.3199 24L29.6399 5.64L23.9999 -2.46532e-07L-0.000107861 24L23.9999 48L29.6399 42.36Z" fill="#911C1C"/>
+                        </svg>
                     </button>
                     <button class="lightbox-next" aria-label="M\u00e9dia suivant" type="button">
-                        <span aria-hidden="true">&#8250;</span>
+                        <svg width="30" height="48" viewBox="0 0 30 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);">
+                            <path d="M29.6399 42.36L11.3199 24L29.6399 5.64L23.9999 -2.46532e-07L-0.000107861 24L23.9999 48L29.6399 42.36Z" fill="#911C1C"/>
+                        </svg>
                     </button>
                     <div class="lightbox-media-container">
                         <img class="lightbox-image" alt="" />

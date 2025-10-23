@@ -33,17 +33,27 @@
     right: 30px;
     background: none;
     border: none;
-    color: #901C1C;
-    font-size: 42px;
-    font-weight: bold;
     cursor: pointer;
     z-index: 10001;
     line-height: 1;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.lightbox-close:hover,
+.lightbox-close svg {
+    width: 42px;
+    height: 42px;
+}
+
+.lightbox-close:hover svg path,
+.lightbox-close:focus svg path {
+    fill: #ff4444;
+}
+
 .lightbox-close:focus {
-    color: #ff4444;
     outline: none;
 }
 
@@ -53,9 +63,7 @@
     top: 50%;
     transform: translateY(-50%);
     background: none;
-    color: #901C1C;
     border: none;
-    font-size: 30px;
     cursor: pointer;
     z-index: 10001;
     width: 50px;
@@ -63,6 +71,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.lightbox-prev svg,
+.lightbox-next svg {
+    width: 30px;
+    height: 48px;
 }
 
 .lightbox-prev {
@@ -73,11 +87,15 @@
     right: 30px;
 }
 
-.lightbox-prev:hover,
+.lightbox-prev:hover svg path,
+.lightbox-prev:focus svg path,
+.lightbox-next:hover svg path,
+.lightbox-next:focus svg path {
+    fill: #ff4444;
+}
+
 .lightbox-prev:focus,
-.lightbox-next:hover,
 .lightbox-next:focus {
-    color: #ff4444;
     outline: none;
 }
 
@@ -124,14 +142,25 @@
     .lightbox-close {
         top: 20px;
         right: 20px;
-        font-size: 32px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .lightbox-close svg {
+        width: 32px;
+        height: 32px;
     }
     
     .lightbox-prev,
     .lightbox-next {
-        font-size: 24px;
         width: 40px;
         height: 40px;
+    }
+    
+    .lightbox-prev svg,
+    .lightbox-next svg {
+        width: 24px;
+        height: 38px;
     }
     
     .lightbox-prev {
